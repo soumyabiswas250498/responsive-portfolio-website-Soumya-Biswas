@@ -134,7 +134,8 @@ svg {
 }
 
 .section {
-  padding-block: 5rem 2rem;
+  padding: 5rem 0.5rem;
+  /* padding-block: 5rem 2rem; */
 }
 
 .section__title,

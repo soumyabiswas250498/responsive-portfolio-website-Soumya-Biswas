@@ -15,6 +15,11 @@ body {
 .about__data {
   text-align: center;
 }
+
+.about__image {
+  display: none;
+}
+
 /* Tabs Table */
 .tabs {
   width: 100%;
@@ -82,10 +87,6 @@ body {
 td {
   padding: auto;
   border: 1px solid rgb(255, 255, 255);
-}
-
-.about__image {
-  display: none;
 }
 
 /* For large devices */
