@@ -83,3 +83,26 @@ td {
   padding: auto;
   border: 1px solid rgb(255, 255, 255);
 }
+
+.about__image {
+  display: none;
+}
+
+/* For large devices */
+@media screen and (min-width: 501px) {
+  .about {
+    display: flex;
+    justify-content: center;
+  }
+  .about__image {
+    display: block;
+    justify-self: center;
+  }
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+  .about__data {
+    text-align: left;
+  }
+}
