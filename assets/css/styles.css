@@ -1,0 +1,394 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import 'glow.css';
+@import url('about.css');
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  /* 
+      Change favorite color
+      Default: hsl(162, 100%, 40%)
+      Orange: hsl(14, 100%, 65%) - Blue: hsl(210, 100%, 70%)
+      Pink: hsl(356, 100%, 75%) - Purple: hsl(250, 100%, 75%)
+
+      For more colors visit: https://colors.dopely.top/color-pedia
+      -> Choose any color 
+      -> click on tab (Color Conversion)
+      -> Copy the color mode (HSL)
+  */
+
+  --hue: 162;
+  --first-color: hsl(var(--hue), 100%, 40%);
+  --first-color-alt: hsl(var(--hue), 56%, 35%);
+  --title-color: #dce8bc;
+  --text-color: #bbe9dd;
+  --body-color: #506581;
+  --container-color: hsl(230, 41%, 34%);
+  --home-color: #64c3f7;
+  --home-text-color: #4f005b;
+  --home-title-color: #260077;
+  --header-color: hsla(230, 41%, 34%, 0.507);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --biggest-font-size: 2rem;
+  --bigger-font-size: 1.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1152px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --bigger-font-size: 2rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+textarea,
+button,
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+input,
+textarea,
+button {
+  outline: none;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--title-color);
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.section {
+  padding-block: 5rem 2rem;
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.section__subtitle {
+  font-size: var(--small-font-size);
+  margin-bottom: 0.25rem;
+}
+
+.section__subtitle span {
+  color: var(--first-color);
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--header-color);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin: 0 10px;
+}
+.nav__logo span {
+  color: var(--first-color);
+}
+
+.nav__list {
+  display: flex;
+  justify-content: end;
+}
+.nav__link {
+  margin: 0 10px;
+  color: var(--text-color);
+}
+.nav__link:hover {
+  color: var(--title-color);
+  transition: 0.5s;
+}
+.hamburger {
+  display: none;
+}
+/* Navigation for mobile devices */
+@media screen and (max-width: 500px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger * {
+    width: 30px;
+    height: 5px;
+    background-color: var(--title-color);
+    border: 1px solid #006eff;
+    border-radius: 50px;
+    margin: 5px 5px;
+    transition: transform 0.5s, width 0.5s;
+  }
+  .openHamburger .line1 {
+    transform: translate(5px, 10px) rotate(-45deg);
+  }
+  .openHamburger .line2 {
+    width: 0;
+    border: 0px;
+  }
+  .openHamburger .line3 {
+    transform: translate(5px, -10px) rotate(45deg);
+  }
+  .nav__menu {
+    height: 0;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    /* Add blur to header */
+    background-color: rgba(0, 85, 87, 0.637);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  /* Show menu */
+  .nav__menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s;
+    opacity: 0;
+  }
+  .nav__menu.active {
+    height: 180px;
+  }
+  .nav__menu.active ul {
+    opacity: 1;
+  }
+  .nav__menu ul li {
+    margin-top: 10px;
+  }
+}
+
+/* Active link */
+
+/*=============== HOME ===============*/
+.home {
+  height: 100vh;
+  background-color: var(--home-color);
+  color: var(--home-text-color);
+}
+.cloud1 {
+  position: absolute;
+  left: 0vw;
+  top: 70px;
+}
+.cloud2 {
+  position: absolute;
+  left: 50vw;
+  top: 50px;
+}
+.cloud3 {
+  position: absolute;
+  left: 80vw;
+  top: 30px;
+}
+
+.home__container {
+  /* padding-top: 2rem; */
+  row-gap: 1rem;
+}
+.home__content {
+  display: grid;
+  row-gap: 2rem;
+}
+.home__data {
+  text-align: center;
+}
+.home__subtitle,
+.home__education {
+  font-size: var(--bigger-font-size);
+}
+.home__title,
+.home__subtitle span {
+  color: var(--home-title-color);
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-semi-bold);
+}
+.home__description {
+  margin: 1rem 1.5rem;
+}
+.home__social {
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  column-gap: 1.2rem;
+}
+.home__social-link {
+  display: flex;
+  color: var(--title-color);
+  background-color: var(--home-text-color);
+  font-size: 1.5rem;
+  padding: 1rem;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: transform 0.4s;
+}
+.home__social-link:hover {
+  transform: translateY(-0.25rem);
+}
+.home__image {
+  justify-self: center;
+}
+.home__blob {
+  margin-top: 1vh;
+  width: 280px;
+  fill: var(--first-color);
+  filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, 0.2));
+}
+
+/*=============== BUTTON ===============*/
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+/*=============== ABOUT ===============*/
+
+/*=============== SKILLS ===============*/
+
+/*=============== SERVICES ===============*/
+
+/*=============== PROJECTS ===============*/
+
+/*=============== CONTACT ===============*/
+
+/*=============== FOOTER ===============*/
+
+/*=============== SCROLL BAR ===============*/
+
+/*=============== SCROLL UP ===============*/
+
+/* Show Scroll Up */
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+/* For medium devices */
+
+/* For large devices */
+@media screen and (min-width: 501px) {
+  .nav__menu {
+    width: 55%;
+  }
+  .home {
+    display: flex;
+    justify-content: center;
+  }
+  .home__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+  .home__data {
+    text-align: left;
+  }
+  .home__description {
+    margin: 0.75rem 0rem;
+  }
+  .home__social {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,85 @@
+.about {
+  height: 100vh;
+  background-color: var(--container-color);
+  color: var(--text-color);
+}
+.about__container {
+  position: relative;
+  margin-top: 5vh;
+}
+
+body {
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+}
+.about__data {
+  text-align: center;
+}
+/* Tabs Table */
+.tabs {
+  width: 100%;
+  margin: 10px auto 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.tab {
+  overflow: hidden;
+  height: 40px;
+  background-color: #1c2841;
+  border-radius: 12px 12px 0 0;
+}
+.tab button {
+  background-color: inherit;
+  float: left;
+  width: 25%;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 5px;
+  transition: 0.3s;
+  font-size: 20px;
+  background-color: #162547;
+  color: var(--title-color);
+}
+@media screen and (max-width: 500px) {
+  .tab button {
+    font-size: 13px;
+  }
+}
+.tab button:hover {
+  background-color: #12192c;
+}
+.tab button.active {
+  background-color: #12192c;
+  color: var(--first-color);
+}
+.tabcontent {
+  text-align: left;
+  display: none;
+  padding: 12px 12px;
+  border-top: none;
+  background-color: hsl(230, 53%, 22%);
+  color: var(--text-color);
+  border-radius: 0 0 12px 12px;
+  height: 40vh;
+}
+#Experience {
+  text-align: justify;
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+#Education table {
+  width: 100%;
+  border: 1px solid rgb(255, 255, 255);
+}
+#Education th,
+td {
+  padding: auto;
+  border: 1px solid rgb(255, 255, 255);
+}
