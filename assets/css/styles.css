@@ -199,7 +199,6 @@
   margin: 0 auto;
 }
 .projects__container {
-  /* width: 100%; */
   row-gap: 2rem;
   justify-content: center;
   padding-block: 1rem;
