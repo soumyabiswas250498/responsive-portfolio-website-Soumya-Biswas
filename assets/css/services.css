@@ -22,7 +22,7 @@
 }
 .services__icon {
   display: block;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--first-color);
   margin-bottom: 0.25rem;
 }
@@ -32,6 +32,12 @@
     font-size: 4rem;
   }
   .services__card {
-    font-size: var(--normal-font-size);
+    font-size: var(--small-font-size);
+  }
+  .services__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    row-gap: 2rem;
+    column-gap: 2.5rem;
   }
 }
