@@ -5,6 +5,7 @@
 @import url('default.css');
 @import url('skills.css');
 @import url('services.css');
+@import url('projects.css');
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
@@ -190,50 +191,6 @@
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 10px;
-}
-
-/*=============== PROJECTS ===============*/
-.projects {
-  /* height: 100vh; */
-  background-color: var(--projects-color);
-  margin: 0 auto;
-}
-.projects__container {
-  row-gap: 2rem;
-  justify-content: center;
-  padding-block: 1rem;
-  margin-inline: auto;
-}
-
-.projects__card {
-  position: relative;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-.projects__img {
-  width: 100%;
-  height: 100%;
-}
-.projects__modal {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.658);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 0.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: bottom 0.4s;
-}
-.projects__subtitle,
-.projects__button {
-  color: var(--text-color);
-  font-size: var(--small-font-size);
 }
 
 /*=============== CONTACT ===============*/
