@@ -7,14 +7,12 @@
   align-items: center;
 }
 .about__container {
-  position: relative;
-  /* padding-top: 5vh; */
+  width: 80%;
+  position: absolute;
+  z-index: auto;
+  padding-top: 25px;
 }
 
-body {
-  background-color: #8bc6ec;
-  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
-}
 .about__data {
   text-align: center;
   margin-right: -5px;
@@ -95,6 +93,9 @@ td {
 
 /* animation */
 /* ---- particles.js container ---- */
+#tsparticles {
+  height: 100vh;
+}
 
 /* For large devices */
 @media screen and (min-width: 501px) {
@@ -108,9 +109,17 @@ td {
   }
   .about__container {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 5vw;
     align-items: center;
   }
   .about__data {
     text-align: left;
   }
+}
+
+.test {
+  /* background-color: #16254700; */
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
 }

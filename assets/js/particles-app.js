@@ -1,127 +1,90 @@
-/* -----------------------------------------------
-/* How to use? : Check the GitHub README
-/* ----------------------------------------------- */
+// TsParticles
 
-/* To load a config file (particles.json) you need to host this demo (MAMP/WAMP/local)... */
-/*
-particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('particles.js loaded - callback');
-});
-*/
-
-/* Otherwise just put the config content (json): */
-
-particlesJS(
-  'particles-js',
-
-  {
-    particles: {
-      number: {
-        value: 100,
-        density: {
-          enable: true,
-          value_area: 1400,
-        },
-      },
-      color: {
-        value: '#ffffff',
-      },
-      shape: {
-        type: 'star',
-        stroke: {
-          width: 0,
-          color: '#000000',
-        },
-        polygon: {
-          nb_sides: 5,
-        },
-        image: {
-          src: 'img/github.svg',
-          width: 100,
-          height: 100,
-        },
-      },
-      opacity: {
-        value: 1,
-        random: true,
-        anim: {
-          enable: true,
-          speed: 1,
-          opacity_min: 0,
-          sync: false,
-        },
-      },
-      size: {
-        value: 3,
-        random: true,
-        anim: {
-          enable: false,
-          speed: 4,
-          size_min: 0.3,
-          sync: false,
-        },
-      },
-      line_linked: {
-        enable: false,
-        distance: 150,
-        color: '#ffffff',
-        opacity: 0.4,
-        width: 1,
-      },
-      move: {
+const options = {
+  fullScreen: {
+    enable: false,
+    zIndex: 50000,
+  },
+  background: {
+    color: '#046c95',
+  },
+  interactivity: {
+    events: {
+      onClick: {
+        // this handles the mouse click event
         enable: true,
+        mode: 'push', // this adds particles
+      },
+      onHover: {
+        // this handles the mouse hover event
+        enable: true,
+        mode: 'repulse', // this make particles move away from the mouse
+      },
+    },
+    modes: {
+      push: {
+        quantity: 6, // number of particles to add
+      },
+      repulse: {
+        distance: 100,
+        duration: 1,
+        factor: 5,
         speed: 1,
-        direction: 'none',
-        random: true,
-        straight: false,
-        out_mode: 'out',
-        bounce: false,
-        attract: {
-          enable: false,
-          rotateX: 600,
-          rotateY: 600,
-        },
-      },
-    },
-    interactivity: {
-      detect_on: 'canvas',
-      events: {
-        onhover: {
-          enable: true,
-          mode: 'repulse',
-        },
-        onclick: {
-          enable: false,
-          mode: 'push',
-        },
-        resize: true,
-      },
-      modes: {
-        grab: {
-          distance: 400,
-          line_linked: {
-            opacity: 1,
-          },
-        },
-        bubble: {
-          distance: 250,
-          size: 0,
-          duration: 2,
-          opacity: 0,
-          speed: 3,
-        },
-        repulse: {
-          distance: 75,
+        maxSpeed: 5,
+        easing: 'ease-out-sine',
+        divs: {
+          distance: 200,
           duration: 0.4,
-        },
-        push: {
-          particles_nb: 4,
-        },
-        remove: {
-          particles_nb: 2,
+          factor: 100,
+          speed: 1,
+          maxSpeed: 50,
+          easing: 'ease-out-quad',
+          selectors: [],
         },
       },
     },
-    retina_detect: true,
-  }
-);
+  },
+  particles: {
+    color: {
+      value: '#FEC603',
+    },
+    move: {
+      enable: true, // this makes particles move
+      speed: { min: 0, max: 0.2 }, // this is the speed of the particles
+    },
+
+    opacity: {
+      value: { min: 1, max: 0.5 }, // this sets the opacity of the particles
+    },
+    size: {
+      value: { min: 0.5, max: 2 }, // this sets the size of the particles
+    },
+    shape: {
+      close: true,
+      fill: true,
+      options: {},
+      type: 'star',
+    },
+    number: {
+      density: {
+        enable: true,
+      },
+      limit: 0,
+      value: 200,
+    },
+    twinkle: {
+      particles: {
+        enable: true,
+        frequency: 0.1,
+        opacity: 1,
+        color: {
+          value: '#ffffff',
+        },
+      },
+    },
+  },
+};
+
+// tsParticles.load has two parameters, the first one is the id of the container, the second one is an object with the options
+console.log('hello');
+tsParticles.load('tsparticles', options);
