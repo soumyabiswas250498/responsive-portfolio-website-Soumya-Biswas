@@ -1,6 +1,7 @@
 // TsParticles
 
 const options = {
+  fpsLimit: 40,
   fullScreen: {
     enable: false,
     zIndex: 50000,
@@ -86,5 +87,5 @@ const options = {
 };
 
 // tsParticles.load has two parameters, the first one is the id of the container, the second one is an object with the options
-console.log('hello');
+
 tsParticles.load('tsparticles', options);

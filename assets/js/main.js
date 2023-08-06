@@ -119,11 +119,13 @@ VANTA.BIRDS({
   minHeight: 200.0,
   minWidth: 200.0,
   scale: 1.0,
-  scaleMobile: 0.5,
+  scaleMobile: 1.0,
   birdSize: 1.0,
-  wingSpan: 15.0,
+  wingSpan: 9.0,
+  speedLimit: 3.0,
   separation: 11.0,
   quantity: 2.0,
+  cohesion: 30.0,
   backgroundColor: 0x245d6b,
 });
 
