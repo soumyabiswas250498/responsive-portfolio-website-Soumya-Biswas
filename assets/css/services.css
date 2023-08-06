@@ -1,0 +1,37 @@
+/*=============== SERVICES ===============*/
+.services {
+  height: 100vh;
+  background-color: var(--services-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.services__container {
+  row-gap: 1rem;
+  /* padding: 0.5rem; */
+}
+.services__card {
+  text-align: center;
+  background-color: var(--container-color);
+  padding: 0.75rem 0.75rem;
+  border-radius: 1rem;
+  border: 2px solid var(--first-color);
+  font-size: var(--smaller-font-size);
+}
+.services__icon {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  margin-bottom: 0.25rem;
+}
+
+@media screen and (min-width: 501px) {
+  .services__icon {
+    font-size: 4rem;
+  }
+  .services__card {
+    font-size: var(--normal-font-size);
+  }
+}

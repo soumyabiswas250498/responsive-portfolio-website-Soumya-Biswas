@@ -1,0 +1,72 @@
+/*=============== SKILLS ===============*/
+.skills {
+  height: 100vh;
+  background-color: var(--skills-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skills__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  row-gap: 1.5rem;
+}
+.skills__data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.skills__description {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.skills__content,
+.skills__group {
+  display: grid;
+}
+.skills__content {
+  margin-top: 2rem;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 4rem;
+  justify-content: center;
+  align-items: baseline;
+}
+.skills__group {
+  row-gap: 1rem;
+  list-style: decimal-leading-zero;
+}
+.skills__item {
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+}
+.skills__item::marker {
+  color: var(--first-color);
+}
+.github {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.github__image {
+  background-color: var(--container-color);
+  padding: 5px 10px;
+  margin-top: 1.5rem;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 501px) {
+  .skills {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}

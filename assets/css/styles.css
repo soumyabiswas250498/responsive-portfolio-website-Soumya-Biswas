@@ -2,167 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import 'glow.css';
 @import url('about.css');
-/*=============== VARIABLES CSS ===============*/
-:root {
-  --header-height: 3.5rem;
-
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  /* 
-      Change favorite color
-      Default: hsl(162, 100%, 40%)
-      Orange: hsl(14, 100%, 65%) - Blue: hsl(210, 100%, 70%)
-      Pink: hsl(356, 100%, 75%) - Purple: hsl(250, 100%, 75%)
-
-      For more colors visit: https://colors.dopely.top/color-pedia
-      -> Choose any color 
-      -> click on tab (Color Conversion)
-      -> Copy the color mode (HSL)
-  */
-
-  --hue: 162;
-  --first-color: hsl(var(--hue), 100%, 40%);
-  --first-color-alt: hsl(var(--hue), 56%, 35%);
-  --title-color: #dce8bc;
-  --text-color: #bbe9dd;
-  --body-color: #506581;
-  --container-color: hsl(230, 41%, 34%);
-  --home-color: #64c3f7;
-  --home-text-color: #4f005b;
-  --home-title-color: #260077;
-  --header-color: hsla(230, 41%, 34%, 0.507);
-
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: 'Poppins', sans-serif;
-  --biggest-font-size: 2rem;
-  --bigger-font-size: 1.25rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
-
-  /*========== Font weight ==========*/
-  --font-regular: 400;
-  --font-medium: 500;
-  --font-semi-bold: 600;
-
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
-}
-
-/*========== Responsive typography ==========*/
-@media screen and (min-width: 1152px) {
-  :root {
-    --biggest-font-size: 4rem;
-    --bigger-font-size: 2rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: 0.875rem;
-    --smaller-font-size: 0.813rem;
-  }
-}
-
-/*=============== BASE ===============*/
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-input,
-textarea,
-button,
-body {
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-}
-
-body {
-  background-color: var(--body-color);
-  color: var(--text-color);
-}
-
-input,
-textarea,
-button {
-  outline: none;
-  border: none;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  color: var(--title-color);
-  font-weight: var(--font-medium);
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: var(--title-color);
-}
-
-img,
-svg {
-  max-width: 100%;
-  height: auto;
-}
-
-/*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
-}
-
-.grid {
-  display: grid;
-  gap: 0.5rem;
-}
-
-.section {
-  padding: 5rem 0.5rem;
-  /* padding-block: 5rem 2rem; */
-}
-
-.section__title,
-.section__subtitle {
-  text-align: center;
-  color: var(--title-color);
-  font-weight: var(--font-semi-bold);
-}
-
-.section__title {
-  font-size: var(--h1-font-size);
-  margin-bottom: 0.5rem;
-}
-
-.section__subtitle {
-  font-size: var(--small-font-size);
-  margin-bottom: 0.25rem;
-}
-
-.section__subtitle span {
-  color: var(--first-color);
-}
-
-.main {
-  overflow: hidden; /* For animation ScrollReveal */
-}
-
+@import url('default.css');
+@import url('skills.css');
+@import url('services.css');
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
@@ -252,7 +94,7 @@ svg {
     opacity: 0;
   }
   .nav__menu.active {
-    height: 180px;
+    height: 210px;
   }
   .nav__menu.active ul {
     opacity: 1;
@@ -269,6 +111,9 @@ svg {
   height: 100vh;
   background-color: var(--home-color);
   color: var(--home-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cloud1 {
   position: absolute;
@@ -347,13 +192,50 @@ svg {
   border-radius: 10px;
 }
 
-/*=============== ABOUT ===============*/
-
-/*=============== SKILLS ===============*/
-
-/*=============== SERVICES ===============*/
-
 /*=============== PROJECTS ===============*/
+.projects {
+  /* height: 100vh; */
+  background-color: var(--projects-color);
+  margin: 0 auto;
+}
+.projects__container {
+  /* width: 100%; */
+  row-gap: 2rem;
+  justify-content: center;
+  padding-block: 1rem;
+  margin-inline: auto;
+}
+
+.projects__card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.projects__img {
+  width: 100%;
+  height: 100%;
+}
+.projects__modal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.658);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: bottom 0.4s;
+}
+.projects__subtitle,
+.projects__button {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+}
 
 /*=============== CONTACT ===============*/
 
