@@ -6,6 +6,7 @@
 @import url('skills.css');
 @import url('services.css');
 @import url('projects.css');
+@import url('contact.css');
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
@@ -192,8 +193,6 @@
   padding: 0.5rem 1rem;
   border-radius: 10px;
 }
-
-/*=============== CONTACT ===============*/
 
 /*=============== FOOTER ===============*/
 

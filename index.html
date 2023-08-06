@@ -374,11 +374,11 @@
         <div class="github">
           <h3 class="skills__title">GitHub Contribution</h3>
           <div class="github__image">
-            <img
+            <!-- <img
               src="http://ghchart.rshah.org/soumyabiswas250498"
               width="98%"
               alt="soumyabiswas250498's Github chart"
-            />
+            /> -->
           </div>
         </div>
       </section>
@@ -552,7 +552,34 @@
       </section>
 
       <!--==================== CONTACT ====================-->
-      <section class="contact section" id="contact tsparticles"></section>
+      <section class="contact section" id="contact">
+        <h3 class="section__subtitle">Get In <span>Touch</span></h3>
+        <h2 class="section__title">Contact Me</h2>
+        <div class="contact__container container grid">
+          <form action="" class="contact__form" id="contact-form">
+            <div class="contact__group">
+              <div class="name">
+                <input type="text" id="name" required />
+                <label for="name">Enter test Your Name</label>
+              </div>
+              <div class="email">
+                <input type="text" id="email" required />
+                <label for="email">Enter Your Email</label>
+              </div>
+            </div>
+            <div class="message">
+              <textarea
+                name="user__message"
+                required
+                class="contact__imput"
+              ></textarea>
+              <label for="">Leave Your Message</label>
+            </div>
+
+            <button type="submit" class="button glow">Send Message</button>
+          </form>
+        </div>
+      </section>
     </main>
 
     <!--==================== FOOTER ====================-->
