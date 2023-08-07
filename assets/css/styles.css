@@ -7,6 +7,7 @@
 @import url('services.css');
 @import url('projects.css');
 @import url('contact.css');
+@import url('footer.css');
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
@@ -194,44 +195,6 @@
   border-radius: 10px;
 }
 
-/*=============== FOOTER ===============*/
-.footer {
-  background-color: var(--container-color);
-  padding-block: 2rem 2rem;
-}
-.footer__container {
-  text-align: center;
-}
-.footer__title {
-  font-size: var(--h1--font-size);
-}
-.footer__title span {
-  color: var(--first-color);
-}
-.footer__education {
-  font-size: var(--normal-font-size);
-}
-.footer__social {
-  display: flex;
-  justify-content: center;
-  column-gap: 1.25rem;
-}
-.footer__social-link {
-  display: flex;
-  color: var(--title-color);
-  background-color: var(--home-text-color);
-  font-size: 0.75rem;
-  padding: 0.5rem;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  transition: transform 0.4s;
-}
-.footer__social-link:hover {
-  transform: translateY(-0.25rem);
-}
-.footer__copy {
-  font-size: var(--smaller-font-size);
-  margin-top: 1rem;
-}
 /*=============== SCROLL BAR ===============*/
 
 /*=============== SCROLL UP ===============*/

@@ -112,19 +112,20 @@ function tabScript(event) {
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 /*=============== LocoMotive ===============*/
+/*
 gsap.registerPlugin(ScrollTrigger);
 
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
 
 const locoScroll = new LocomotiveScroll({
-  el: document.querySelector('.main'),
+  el: document.querySelector('#scroll-trigger'),
   smooth: true,
 });
 // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
 locoScroll.on('scroll', ScrollTrigger.update);
 
-// tell ScrollTrigger to use these proxy methods for the ".main" element since Locomotive Scroll is hijacking things
-ScrollTrigger.scrollerProxy('.main', {
+// tell ScrollTrigger to use these proxy methods for the "#scroll-trigger" element since Locomotive Scroll is hijacking things
+ScrollTrigger.scrollerProxy('#scroll-trigger', {
   scrollTop(value) {
     return arguments.length
       ? locoScroll.scrollTo(value, 0, 0)
@@ -139,32 +140,39 @@ ScrollTrigger.scrollerProxy('.main', {
     };
   },
   // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-  pinType: document.querySelector('.main').style.transform
+  pinType: document.querySelector('#scroll-trigger').style.transform
     ? 'transform'
     : 'fixed',
 });
 
-// const scroll = new LocomotiveScroll({
-//   el: document.querySelector('.main'),
-//   smooth: true,
-// });
-
-VANTA.BIRDS({
-  el: '#skills',
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.0,
-  minWidth: 200.0,
-  scale: 1.0,
-  scaleMobile: 1.0,
-  birdSize: 1.0,
-  wingSpan: 9.0,
-  speedLimit: 3.0,
-  separation: 11.0,
-  quantity: 2.0,
-  cohesion: 30.0,
-  backgroundColor: 0x245d6b,
+const scroll = new LocomotiveScroll({
+  el: document.querySelector('.main'),
+  smooth: true,
 });
+*/
+/*=============== Gsap Scroll Trigger ===============*/
 
-// about me
+gsap.from('#services #box-left', {
+  x: '-45vw',
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: '#services #box-left',
+    scrolller: 'body',
+    // markers: true,
+    start: 'top 100%',
+    end: 'top 40%',
+    scrub: 1,
+  },
+});
+gsap.from('#services #box-right', {
+  x: '45vw',
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: '#services #box-right',
+    scrolller: 'body',
+    // markers: true,
+    start: 'top 100%',
+    end: 'top 40%',
+    scrub: 1,
+  },
+});
