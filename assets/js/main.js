@@ -112,67 +112,92 @@ function tabScript(event) {
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 /*=============== LocoMotive ===============*/
-/*
 gsap.registerPlugin(ScrollTrigger);
 
-// Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+function loco(scrollSelector) {
+  gsap.registerPlugin(ScrollTrigger);
 
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector('#scroll-trigger'),
-  smooth: true,
-});
-// each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-locoScroll.on('scroll', ScrollTrigger.update);
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector(scrollSelector),
+    smooth: true,
+  });
 
-// tell ScrollTrigger to use these proxy methods for the "#scroll-trigger" element since Locomotive Scroll is hijacking things
-ScrollTrigger.scrollerProxy('#scroll-trigger', {
-  scrollTop(value) {
-    return arguments.length
-      ? locoScroll.scrollTo(value, 0, 0)
-      : locoScroll.scroll.instance.scroll.y;
-  }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-  getBoundingClientRect() {
-    return {
-      top: 0,
-      left: 0,
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-  },
-  // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-  pinType: document.querySelector('#scroll-trigger').style.transform
-    ? 'transform'
-    : 'fixed',
-});
+  locoScroll.on('scroll', ScrollTrigger.update);
 
-const scroll = new LocomotiveScroll({
-  el: document.querySelector('.main'),
-  smooth: true,
-});
-*/
+  ScrollTrigger.scrollerProxy(scrollSelector, {
+    scrollTop(value) {
+      return arguments.length
+        ? locoScroll.scrollTo(value, 0, 0)
+        : locoScroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+
+    pinType: document.querySelector(scrollSelector).style.transform
+      ? 'transform'
+      : 'fixed',
+  });
+
+  ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
+
+  ScrollTrigger.refresh();
+}
+loco('#scroll-trigger');
+
 /*=============== Gsap Scroll Trigger ===============*/
+
+/*== Services Scroll Trigger ==*/
 
 gsap.from('#services #box-left', {
   x: '-45vw',
+  ease: 'power1.inOut',
   stagger: 0.2,
   scrollTrigger: {
     trigger: '#services #box-left',
-    scrolller: 'body',
-    // markers: true,
+    scroller: '#scroll-trigger',
     start: 'top 100%',
-    end: 'top 40%',
+    end: 'top 50%',
     scrub: 1,
   },
 });
 gsap.from('#services #box-right', {
   x: '45vw',
+  ease: 'power1.inOut',
   stagger: 0.2,
   scrollTrigger: {
     trigger: '#services #box-right',
-    scrolller: 'body',
-    // markers: true,
+    scroller: '#scroll-trigger',
     start: 'top 100%',
-    end: 'top 40%',
+    end: 'top 50%',
     scrub: 1,
   },
 });
+
+/*== Project Scroll Trigger ==*/
+
+function projectAnimate(selector) {
+  gsap.from(selector, {
+    scale: 0,
+    ease: 'power1.inOut',
+    stagger: 0.8,
+    scrollTrigger: {
+      trigger: selector,
+      scroller: '#scroll-trigger',
+      start: 'top 100%',
+      markers: true,
+      end: 'top 50%',
+      scrub: 1,
+    },
+  });
+}
+
+projectAnimate('#project-1');
+projectAnimate('#project-2');
+projectAnimate('#project-3');
+projectAnimate('#project-4');
