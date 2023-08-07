@@ -43,10 +43,10 @@
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 10px 5px;
+  padding: 5px 5px;
   transition: 0.3s;
   font-size: 20px;
-  background-color: #162547;
+  background-color: #172b61;
   color: var(--title-color);
 }
 @media screen and (max-width: 500px) {
@@ -55,10 +55,10 @@
   }
 }
 .tab button:hover {
-  background-color: #12192c;
+  background-color: #2b3a64;
 }
 .tab button.active {
-  background-color: #12192c;
+  background-color: #0d1b41;
   color: var(--first-color);
 }
 .tabcontent {
@@ -66,7 +66,7 @@
   display: none;
   padding: 12px 12px;
   border-top: none;
-  background-color: hsl(230, 53%, 22%);
+  background-color: hsl(230, 53%, 32%);
   color: var(--text-color);
   border-radius: 0 0 12px 12px;
   height: 325px;
