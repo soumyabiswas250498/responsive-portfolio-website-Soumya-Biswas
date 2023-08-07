@@ -48,30 +48,23 @@ tl1.to('.home__education', {
   yoyo: true,
   yoyoEase: true,
 });
-gsap.to('.cloud1', {
-  x: '80vw',
-  duration: 20,
-  delay: 0,
-  repeat: -1,
-  yoyo: true,
-  yoyoEase: true,
-});
-gsap.to('.cloud2', {
-  x: '22vw',
-  duration: 30,
-  delay: 0,
-  repeat: -1,
-  yoyo: true,
-  yoyoEase: true,
-});
-gsap.to('.cloud3', {
-  x: '-85vw',
-  duration: 40,
-  delay: 0,
-  repeat: -1,
-  yoyo: true,
-  yoyoEase: true,
-});
+
+// =========CloudAnimation===========
+
+function cloudAnimation(selector, xValue) {
+  gsap.to(selector, {
+    x: xValue,
+    duration: 40,
+    delay: 0,
+    repeat: -1,
+    yoyo: true,
+    yoyoEase: true,
+  });
+}
+
+cloudAnimation('.cloud1', '80vw');
+cloudAnimation('.cloud2', '22vw');
+cloudAnimation('.cloud3', '-85vw');
 
 /*=================About Page==================*/
 
@@ -88,7 +81,6 @@ function tabScript(event) {
   let tabName = event.target.innerText;
   tablinks = document.getElementsByClassName('tablinks');
   for (i = 0; i < tablinks.length; i++) {
-    // console.log(tablinks[i].innerText);
     if (tablinks[i].innerText === tabName) {
       tablinks[i].className = tablinks[i].className = 'tablinks active';
     } else {
@@ -99,16 +91,6 @@ function tabScript(event) {
   document.getElementById(tabName);
   document.getElementById(tabName).style.display = 'block';
 }
-
-/*=============== REMOVE MENU MOBILE ===============*/
-
-/*=============== ADD BLUR TO HEADER ===============*/
-
-/*=============== EMAIL JS ===============*/
-
-/*=============== SHOW SCROLL UP ===============*/
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 /*=============== LocoMotive ===============*/
@@ -154,30 +136,23 @@ loco('#scroll-trigger');
 
 /*== Services Scroll Trigger ==*/
 
-gsap.from('#services #box-left', {
-  x: '-45vw',
-  ease: 'power1.inOut',
-  stagger: 0.2,
-  scrollTrigger: {
-    trigger: '#services #box-left',
-    scroller: '#scroll-trigger',
-    start: 'top 100%',
-    end: 'top 50%',
-    scrub: 1,
-  },
-});
-gsap.from('#services #box-right', {
-  x: '45vw',
-  ease: 'power1.inOut',
-  stagger: 0.2,
-  scrollTrigger: {
-    trigger: '#services #box-right',
-    scroller: '#scroll-trigger',
-    start: 'top 100%',
-    end: 'top 50%',
-    scrub: 1,
-  },
-});
+function servicesAnimation(selector, xValue) {
+  gsap.from(selector, {
+    x: xValue,
+    ease: 'power1.inOut',
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: selector,
+      scroller: '#scroll-trigger',
+      start: 'top 100%',
+      end: 'top 50%',
+      scrub: 1,
+    },
+  });
+}
+
+servicesAnimation('#box-left', '-45vw');
+servicesAnimation('#box-right', '45vw');
 
 /*== Project Scroll Trigger ==*/
 
@@ -190,7 +165,6 @@ function projectAnimate(selector) {
       trigger: selector,
       scroller: '#scroll-trigger',
       start: 'top 100%',
-      markers: true,
       end: 'top 50%',
       scrub: 1,
     },
