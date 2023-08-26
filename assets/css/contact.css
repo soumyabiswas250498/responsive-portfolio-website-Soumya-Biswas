@@ -32,6 +32,7 @@
   width: 150px;
 }
 .contact__form input {
+  color: bisque;
   height: 50px;
   background: transparent;
   border: 2px solid var(--first-color);
@@ -41,6 +42,7 @@
 }
 
 .message textarea {
+  color: bisque;
   height: 150px;
   background: transparent;
   border: 2px solid var(--first-color);

@@ -170,8 +170,43 @@ function projectAnimate(selector) {
     },
   });
 }
-
+projectAnimate('#project-5');
 projectAnimate('#project-1');
 projectAnimate('#project-2');
 projectAnimate('#project-3');
 projectAnimate('#project-4');
+
+/*== Email ==*/
+
+const contactForm = document.getElementById('contact-form');
+const contactMessage = document.getElementById('contact-message');
+
+const sendEmail = e => {
+  e.preventDefault();
+  emailjs
+    .sendForm(
+      'service_cshhtr5',
+      'template_439u8cf',
+      '#contact-form',
+      'LSCfRMhVbXhCKl-4Y'
+    )
+    .then(
+      () => {
+        // Show sent message
+        contactMessage.textContent = 'Message sent successfully. ✅';
+        setTimeout(() => {
+          contactMessage.textContent = '';
+        }, 10000);
+        contactForm.reset();
+      },
+      () => {
+        contactMessage.textContent =
+          'Error occured. Drop an email to soumyabiswas250498@gmail.com. ❌';
+        setTimeout(() => {
+          contactMessage.textContent = '';
+        }, 10000);
+      }
+    );
+};
+
+contactForm.addEventListener('submit', sendEmail);
