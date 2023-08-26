@@ -19,6 +19,7 @@
   font-size: var(--normal-font-size);
 }
 .footer__social {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   column-gap: 1.25rem;
@@ -38,4 +39,5 @@
 .footer__copy {
   font-size: var(--smaller-font-size);
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
