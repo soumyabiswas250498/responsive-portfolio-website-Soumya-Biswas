@@ -70,6 +70,7 @@
 }
 
 /*=============== BASE ===============*/
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -85,7 +86,6 @@ body {
 }
 
 body {
-  /* background-color: var(--body-color); */
   color: var(--text-color);
 }
 
@@ -128,11 +128,6 @@ svg {
 .grid {
   display: grid;
   gap: 0.5rem;
-}
-
-.section {
-  padding: 5rem 0.5rem;
-  /* padding-block: 5rem 2rem; */
 }
 
 .section__title,

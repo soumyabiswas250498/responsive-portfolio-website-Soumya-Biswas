@@ -30,27 +30,27 @@
   <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-      <nav class="nav continer">
+      <nav class="nav continer" id="navbar">
         <a href="" class="nav__logo"> Soumya <span> Biswas</span> </a>
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
+            <li class="nav__item active_nav" id="home_nav">
+              <p class="nav__link" name="#home">Home</p>
             </li>
-            <li class="nav__item">
-              <a href="#about" class="nav__link">About</a>
+            <li class="nav__item" id="about_nav">
+              <p class="nav__link" name="#about">About</p>
             </li>
-            <li class="nav__item">
-              <a href="#skills" class="nav__link">Skills</a>
+            <li class="nav__item" id="skills_nav">
+              <p class="nav__link" name="#skills">Skills</p>
             </li>
-            <li class="nav__item">
-              <a href="#services" class="nav__link">Services</a>
+            <li class="nav__item" id="services_nav">
+              <p class="nav__link" name="#services">Services</p>
             </li>
-            <li class="nav__item">
-              <a href="#projects" class="nav__link">Projects</a>
+            <li class="nav__item" id="projects_nav">
+              <p class="nav__link" name="#projects">Projects</p>
             </li>
-            <li class="nav__item">
-              <a href="#contact" class="nav__link">Contact</a>
+            <li class="nav__item" id="contact_nav">
+              <p class="nav__link" name="#contact">Contact</p>
             </li>
           </ul>
         </div>
@@ -63,11 +63,16 @@
     </header>
 
     <!--==================== MAIN ====================-->
-    <div id="scroll-trigger">
+    <div id="scroll-trigger" data-scroll-container>
       <main class="main">
         <!--==================== HOME ====================-->
 
         <section class="home section" id="home">
+          <div
+            data-scroll=""
+            data-scroll-repeat="true"
+            data-scroll-call="home_section"
+          ></div>
           <div id="cloud">
             <img src="/assets/img/path10000.svg" width="50px" class="cloud1" />
             <img src="/assets/img/path10000.svg" width="80px" class="cloud2" />
@@ -118,6 +123,11 @@
         <!--==================== ABOUT ====================-->
 
         <section class="about section" id="about">
+          <div
+            data-scroll=""
+            data-scroll-repeat="true"
+            data-scroll-call="about_section"
+          ></div>
           <div id="tsparticles"></div>
           <div class="about__container container grid">
             <div class="about__image">
@@ -238,6 +248,11 @@
 
         <!--==================== SKILLS ====================-->
         <section class="skills section" id="skills">
+          <div
+            data-scroll=""
+            data-scroll-repeat="true"
+            data-scroll-call="skills_section"
+          ></div>
           <!-- <canvas id="canvas"></canvas> -->
           <div class="skills__container container">
             <div class="skills__data">
@@ -279,6 +294,11 @@
 
         <!--==================== SERVICES ====================-->
         <section class="services section" id="services">
+          <div
+            data-scroll=""
+            data-scroll-repeat="true"
+            data-scroll-call="services_section"
+          ></div>
           <h3 class="section__subtitle">My <span>Services</span></h3>
           <h2 class="section__title">What I Do</h2>
           <div class="services__container container grid">
@@ -319,7 +339,14 @@
 
         <!--==================== PROJECTS ====================-->
         <section class="projects section" id="projects">
-          <h3 class="section__subtitle">My <span>Jobs</span></h3>
+          <div
+            data-scroll=""
+            data-scroll-repeat="true"
+            data-scroll-call="projects_section"
+          ></div>
+          <h3 class="section__subtitle" id="project_title">
+            My <span>Jobs</span>
+          </h3>
           <h2 class="section__title">Recent Projects</h2>
           <div class="projects__container container grid">
             <article class="projects__card" id="project-5">
@@ -561,6 +588,11 @@
 
         <!--==================== CONTACT ====================-->
         <section class="contact section" id="contact">
+          <div
+            data-scroll=""
+            data-scroll-repeat="true"
+            data-scroll-call="contact_section"
+          ></div>
           <h3 class="section__subtitle">Get In <span>Touch</span></h3>
           <h2 class="section__title">Contact Me</h2>
           <div class="contact__container container grid">

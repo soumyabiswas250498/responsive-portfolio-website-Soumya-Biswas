@@ -94,14 +94,18 @@ function tabScript(event) {
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 /*=============== LocoMotive ===============*/
-gsap.registerPlugin(ScrollTrigger);
+// const scrollSelector = '#scroll-trigger';
 
-function loco(scrollSelector) {
+const loco = scrollSelector => {
   gsap.registerPlugin(ScrollTrigger);
+
+  // gsap.registerPlugin(ScrollTrigger);
 
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector(scrollSelector),
     smooth: true,
+    scrollFromAnywhere: true,
+    reloadOnContextChange: true,
   });
 
   locoScroll.on('scroll', ScrollTrigger.update);
@@ -129,9 +133,37 @@ function loco(scrollSelector) {
   ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
 
   ScrollTrigger.refresh();
-}
-loco('#scroll-trigger');
 
+  window.addEventListener('load', () => {
+    const navBtn1 = document.getElementById('home_nav');
+    const navBtn2 = document.getElementById('about_nav');
+    const navBtn3 = document.getElementById('skills_nav');
+    const navBtn4 = document.getElementById('services_nav');
+    const navBtn5 = document.getElementById('projects_nav');
+    const navBtn6 = document.getElementById('contact_nav');
+  });
+
+  const select = document.getElementsByClassName('nav__list')[0];
+  select.addEventListener('click', e => {
+    navScroll(e.target.getAttribute('name'));
+  });
+
+  function navScroll(input) {
+    console.log(input);
+    // const target = ;
+    locoScroll.scrollTo(document.querySelector(input));
+  }
+
+  // test scrollTo
+  // const select = document.getElementById('services_nav');
+  // select.addEventListener('click', e => {
+  //   console.log(e);
+  //   const target = document.querySelector('#services');
+  //   locoScroll.scrollTo(target);
+  // });
+};
+
+loco('#scroll-trigger');
 /*=============== Gsap Scroll Trigger ===============*/
 
 /*== Services Scroll Trigger ==*/
