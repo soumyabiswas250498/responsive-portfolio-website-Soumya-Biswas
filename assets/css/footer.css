@@ -2,7 +2,7 @@
 .footer {
   background-color: var(--container-color);
   padding-block: 2rem 2rem;
-  height: 20vh;
+  height: 23vh;
   display: flex;
   justify-content: center;
 }

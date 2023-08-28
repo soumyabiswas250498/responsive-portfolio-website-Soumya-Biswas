@@ -130,6 +130,10 @@ svg {
   gap: 0.5rem;
 }
 
+/* .section {
+  padding: 5rem 0.5rem;
+} */
+
 .section__title,
 .section__subtitle {
   text-align: center;

@@ -1,8 +1,8 @@
 /*=============== SHOW MENU ===============*/
 const hamburger = document.querySelector('#hamburger');
-console.log(hamburger);
+// console.log(hamburger);
 hamburger.onclick = function () {
-  console.log('hello');
+  // console.log('hello');
   const navbar = document.querySelector('#nav-menu');
   const hamburger = document.querySelector('#hamburger');
   navbar.classList.toggle('active');
@@ -141,26 +141,66 @@ const loco = scrollSelector => {
     const navBtn4 = document.getElementById('services_nav');
     const navBtn5 = document.getElementById('projects_nav');
     const navBtn6 = document.getElementById('contact_nav');
+    locoScroll.on('call', callValue => {
+      let inView = document.getElementsByClassName('is-inview')[0];
+      // console.log(inView);
+      activeController(inView.getAttribute('data-scroll-call'));
+    });
+
+    function activeController(input) {
+      if (input === 'home_section') {
+        navBtn1.classList.add('active_nav');
+      } else {
+        if (navBtn1.classList[1]) {
+          navBtn1.classList.remove('active_nav');
+        }
+      }
+      if (input === 'about_section') {
+        navBtn2.classList.add('active_nav');
+      } else {
+        if (navBtn2.classList[1]) {
+          navBtn2.classList.remove('active_nav');
+        }
+      }
+      if (input === 'skills_section') {
+        navBtn3.classList.add('active_nav');
+      } else {
+        if (navBtn3.classList[1]) {
+          navBtn3.classList.remove('active_nav');
+        }
+      }
+      if (input === 'services_section') {
+        navBtn4.classList.add('active_nav');
+      } else {
+        if (navBtn4.classList[1]) {
+          navBtn4.classList.remove('active_nav');
+        }
+      }
+      if (input === 'projects_section') {
+        navBtn5.classList.add('active_nav');
+      } else {
+        if (navBtn5.classList[1]) {
+          navBtn5.classList.remove('active_nav');
+        }
+      }
+      if (input === 'contact_section') {
+        navBtn6.classList.add('active_nav');
+      } else {
+        if (navBtn6.classList[1]) {
+          navBtn6.classList.remove('active_nav');
+        }
+      }
+    }
   });
 
   const select = document.getElementsByClassName('nav__list')[0];
   select.addEventListener('click', e => {
     navScroll(e.target.getAttribute('name'));
   });
-
   function navScroll(input) {
-    console.log(input);
-    // const target = ;
+    // console.log(input);
     locoScroll.scrollTo(document.querySelector(input));
   }
-
-  // test scrollTo
-  // const select = document.getElementById('services_nav');
-  // select.addEventListener('click', e => {
-  //   console.log(e);
-  //   const target = document.querySelector('#services');
-  //   locoScroll.scrollTo(target);
-  // });
 };
 
 loco('#scroll-trigger');
